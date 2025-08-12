@@ -13,7 +13,7 @@ public class CreateEmailContent {
 
         StringBuilder raw_content = new StringBuilder();
         raw_content.append("<h1>Let's Workout!</h1>\r\n" +
-                        "<p> Today is " + today.format(formatter) + " and it's time to get your health increase. You can say it's <b>SCHWARZENEGGER O'CLOCK</b>. \"<i>Come with me if you want to live</i>. Hehe. </p>");
+                        "<p> Today is " + today.format(formatter) + " and it's time to get your health increase. You can say it's <b>SCHWARZENEGGER O'CLOCK</b>. \"<i>Come with me if you want to live</i>\". Hehe. </p>");
         raw_content.append("\n\n<u>Workout</u>:");
         raw_content.append("<ul>");
         for(Map.Entry<String, Integer> entry : workout.entrySet()) {
