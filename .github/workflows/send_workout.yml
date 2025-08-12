@@ -16,6 +16,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Generate Gradle wrapper
+        run: gradle wrapper
       - name: Build with Gradle
         run: ./gradlew build
       - name: Send workout email
