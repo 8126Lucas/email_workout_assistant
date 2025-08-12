@@ -1,0 +1,25 @@
+name: Daily Workout Email
+
+on:
+  schedule:
+    - cron: '0 5 * * 0-5'
+  workflow_dispatch:
+
+jobs:
+  send-workout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Build with Gradle
+        run: ./gradlew build
+      - name: Send workout email
+        run: ./gradlew run
+        env:
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          EWA_PASSWORD: ${{ secrets.EWA_PASSWORD }}
