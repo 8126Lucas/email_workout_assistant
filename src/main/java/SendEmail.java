@@ -10,7 +10,7 @@ public class SendEmail {
         String PASSWORD = System.getenv("EWA_PASSWORD");
 
         if(USERNAME == null || PASSWORD == null) {
-            System.out.println("SIR! THERE HAS BEEN A PROBLEM THE ENVIRONMENT VARIABLES!");
+            System.out.println("\nSIR! THERE HAS BEEN A PROBLEM THE ENVIRONMENT VARIABLES!");
             return;
         }
 
@@ -42,7 +42,7 @@ public class SendEmail {
             error.printStackTrace();
         }
 
-        System.out.println("The email was sent, sir!");
+        System.out.println("\nThe email was sent, sir!");
     }
     
 
